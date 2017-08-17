@@ -1,76 +1,120 @@
-<!DOCTYPE HTML>
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+<html xmlns="http://www.w3.org/1999/xhtml">
+<head>
+<meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
+<title>The shopping List ~~Shop at ease</title>
+<style type="text/css">
+#wrapper {
+	background-color: #09F;
+	height: 658px;
+	width: auto;
+}
+.codyright{ text-align:center;	
+	
+}
+#head {
+	background-color: #FFF;
+	height: 100px;
+	width: auto;
+}
+#nav-btn {
+	position: absolute;
+	width: 422px;
+	height: 51px;
+	z-index: 1;
+	left: 105px;
+	top: 209px;
+}
+#apDiv1 {
+	position: absolute;
+	width: 464px;
+	height: 66px;
+	z-index: 2;
+	left: 104px;
+	top: 39px;
+	color: #003;
+	font-weight: bold;
+	font-style: italic;
+	font-size: 36px;
+}
+.nav{
+	width:400px;
+	
+}
+#content {
+	background-color: #CCC;
+	height: 500px;
+	width: 500px;
+	margin-right: 5px;
+	margin-bottom: auto;
+}
+#apDiv2 {
+	position: absolute;
+	width: 390px;
+	height: 35px;
+	z-index: 3;
+	left: 570px;
+	top: 148px;
+	color: #003;
+	font-size: 18px;
+	font-weight: bold;
+	font-style: italic;
+}
+#apDiv3 {
+	position: absolute;
+	width: 431px;
+	height: 344px;
+	z-index: 4;
+	left: 565px;
+	top: 200px;
+	text-align: center;
+	background-color: #DFDFDF;
+}
+</style>
+</head>
 
-<html>
-	<head>
-		<title>ShoppingList</title>
-		<meta charset="utf-8" />
-		<meta name="viewport" content="width=device-width, initial-scale=1, user-scalable=no" />
-		<link rel="stylesheet" href="../static/CSS/main.css" />
-		
-		<!--[if lte IE 9]><link rel="stylesheet" href="assets/css/ie9.css" /><![endif]-->
-		<noscript><link rel="stylesheet" href="../static/CSS/noscript.css" /></noscript>
-	</head>
-	<body>
-		
-		<!-- Wrapper -->
-			<div id="wrapper">
+<body>
+<div class="wrapper" id="wrapper">
+  
 
-				<!-- Header -->
-					<header id="header">
-						<div class="logo">
-                        <img class="icon fa-diamond" src="../static/img/shopping-cart-hi.png" width="65" height="68" alt="shopping"> </div>
-						<div class="content">
-							<div class="inner">
-								<h1>SHOPPING lIST</h1>
-								<p>The challenge of keeping track of shopping items is a need for many individuals that requires an innovative and robust solution that will allow them to remember and share the shopping lists with others</p>
-							</div>
-						</div>
-						<nav>
-							<ul>
-								<li><a href="#">Home</a></li>
-								<li><a href="#">View Lists</a></li>
-								<li><a href="#">Delete Lists</a></li>
-								<li><a href="#">Add Lists</a></li>
-                                <li><a href="#">Update Lists</a></li>
-								<!--<li><a href="#elements">Elements</a></li>-->
-							</ul>
-						</nav>
-						<p><h4> Manipulate the Items on your shopping List</p></h4>
-						<nav>
-								<ul>
-									
-									<li><a href="#">add item</a></li>
-									<li><a href="#">View item</a></li>
-									<li><a href="#">Delete item</a></li>
-									<li><a href="#">edit item</a></li>
-									<li><a href="#">Update Lists</a></li>
-									<!--<li><a href="#elements">Elements</a></li>-->
-								</ul>
-							</nav>
-					</header>
-
-				<!-- Main -->
-					<div id="main">
-
-						
-
-					</div>
-
-				<!-- Footer -->
+  <div class="head" id="head">
+    <div id="apDiv1">The Shopping List</div>
+  </div>
+  <div class="nav" id="nav">
+   
+  <P>Manipulate your shopping List from here</P>
+    <table width="48%" border="0">
+      <tr>
+        <td width="15%"><input type="submit" name="addbtn" id="addbtn" value="ADD LIST" /></td>
+        <td width="15%"><input type="submit" name="updatebtn" id="updatebtn" value="UPDATE LIST" /></td>
+        <td width="12%"><input type="submit" name="viewbtn" id="viewbtn" value="VIEW LISTS" /></td>
+        <td width="58%"><input type="submit" name="delbtn" id="delbtn" value="DELETE LISTS" /></td>
+      </tr>
+    </table>
+    </br>
+    <p>&nbsp;</p>
+    <p>Manipulate the Items in your shoppinglist from here </p>
+    <table width="48%" border="0">
+      <tr>
+        <td width="15%"><input type="submit" name="additem" id="additem" value="ADD ITEM" /></td>
+        <td width="15%"><input type="submit" name="updateitem" id="updateitem" value="UPDATE ITEMS" /></td>
+        <td width="12%"><input type="submit" name="viewitem" id="viewitem" value="VIEW ITEMS" /></td>
+        <td width="58"><input type="submit" name="delitem" id="delitem" value="DELETE ITEMS" /></td>
+      </tr>
+    </table>
+  </div>
+  
+  <!-- Footer -->
 					<footer id="footer">
 						<p class="copyright">&copy; Shopping List.</p>
-					</footer>
+					  <p class="copyright">&nbsp;</p>
+						
+</footer
+>
+<div id="apDiv2">Shop at ease and in your own time</div>
+<div id="apDiv3">No shoppinglists available</div>
+</div>
 
-	</div>
-
-		<!-- BG -->
-			<div id="bg"></div>
-
-		<!-- Scripts -->
-			<script  src="../static/js/jquery.min.js"></script>
-			<script src="../static/js/skel.min.js"></script>
-			<script src="../static/js/util.js"></script>
-			<script src="../static/js/main.js"></script>
 
 </body>
 </html>
