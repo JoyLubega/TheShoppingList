@@ -1,10 +1,15 @@
 import unittest
 """from slist import sList"""
+import sys
+import os
 
+sys.path.append(os.path.abspath('../classes'))
+#from calculator import simpleCalc
+from shoppinglists import SList
 
 class ListsTestCase(unittest.TestCase):
     def setUp(self):
-        self.slist = sList('Joybithday')
+        self.slist = SList('Joybithday')
 
     def test_slist_created(self):
         """Should test if bucket has been created successfully"""

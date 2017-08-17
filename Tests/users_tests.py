@@ -1,8 +1,14 @@
 import unittest
+import sys
+import os
 
-from classes.user import User
-from classes.shoppinglists import SList
-from classes.items import Item
+sys.path.append(os.path.abspath('../classes'))
+#from calculator import simpleCalc
+#from shoppinglists import SList
+
+from user import User
+from shoppinglists import SList
+from items import Item
 
 
 class UserCase(unittest.TestCase):
@@ -21,7 +27,7 @@ class UserCase(unittest.TestCase):
     def test_create_list(self):
         """Should succesfully added list"""
         self.user.create_list(self.slist)
-        index = len(self.user.slists) - 1
+        index = len(self.user.slist) - 1
         self.assertEqual(self.user.slists[index].name, 'travel')
 
 
@@ -42,14 +48,14 @@ class UserCase(unittest.TestCase):
         #Should check that a user can fetch all their lists
         self.slist1 = SList('joybirthday')
         self.slist2 = SList('donaschool')
-        self.user.create_bucket(self.lst)
-        self.user.create_bucket(self.lst2)
+        self.user.create_list(self.lst)
+        self.user.create_list(self.lst2)
         self.assertIsInstance(self.user.get_lists(), list)
         self.assertEqual(len(self.user.get_lists()), 2)
 
     def test_get_single_list(self):
         """Should check getting a list"""
-        self.slist1 = sList('travel')
+        self.slist1 = SList('travel')
         self.user.create_list(self.slist)
         bucket = self.user.get_single_list('travel')
         self.assertEqual(slist.name, 'travel')
@@ -57,8 +63,8 @@ class UserCase(unittest.TestCase):
 
     def test_delete_list(self):
         """Should check if list is deleted by user"""
-        self.slist1 = sList('joybirthday')
-        self.slist2 = sList('donaschool')
+        self.slist1 = SList('joybirthday')
+        self.slist2 = SList('donaschool')
         self.user.create_list(self.slist1)
         self.user.create_list(self.slit2)
         self.assertEqual(len(self.user.get_lists()), 2)
@@ -70,11 +76,11 @@ class UserCase(unittest.TestCase):
         list_name = 'joybirthday'
 
         self.user.create_list(self.slist)
-        self.user.add_item(list_name, self.item)
+        self.user.add_item(list_name, self.item,price)
         index = len(self.slist.items) - 1
         self.assertEqual(self.slist.items[index].name, 'cake')
 
-    def test_user_edit_item_in_list(self,list_name,item_name,new_item_name):
+    def test_user_edit_item_in_list(self):
         """Should check if an item in a list is updated """
         bucket_name = 'joybirthday'
         item_name = 'cake'
@@ -104,7 +110,7 @@ class UserCase(unittest.TestCase):
         """Should check if item is deleted from list"""
         list_name = 'joybirthday'
         self.user.create_list(self.slist)
-        self.user.add_item(list_name, self.item)
+        self.user.add_item(list_name, self.item,price)
         self.assertTrue([item for item in self.slist.items
                          if self.item.name == 'cake'])
         self.user.delete_item(list_name, self.item.name)
