@@ -39,7 +39,7 @@ class UserCase(unittest.TestCase):
 
 
     def test_get_user_list(self):
-        #Should check that a user can fetch all their buckets
+        #Should check that a user can fetch all their lists
         self.slist1 = SList('joybirthday')
         self.slist2 = SList('donaschool')
         self.user.create_bucket(self.lst)

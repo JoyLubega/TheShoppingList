@@ -1,0 +1,20 @@
+language: python
+# vesions
+python:
+  - "3.3"
+  - "3.4"
+  - "3.5"
+  - "3.6"
+cache: pip
+# command to install dependencies
+install:
+  -pip install unnittest2  
+  - pip install coveralls
+  - pip install coverage
+# command to run tests
+script:
+  -python Theshoppinglist.py
+  - nosetests --with-coverage
+
+after_success:
+  - coveralls

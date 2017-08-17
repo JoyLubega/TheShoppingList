@@ -9,17 +9,23 @@ from classes.shoppinglists import SList
 from classes.items import Item
 
 app = Flask(__name__)
-app.secret_key = 'MySecretKey'
+app.secret_key = b's\x83I\xc7\xd6\xae<\xf1\x8f\\b\xff\x9e\x82::'
 all_items = []
 current_user = None
 Shop = App()
 
-app = Flask(__name__)
+
 
 @app.route('/', methods=['GET'])
 def index():
     """This show the first page which is the index page"""
     return render_template('index.html')
+
+
+@app.route('/sn', methods=['POST'])
+def sn():
+    """This show the first page which is the index page"""
+    return render_template('signup.html')
 
 @app.route('/signUp', methods=['POST'])
 def sign_up():
@@ -29,7 +35,7 @@ def sign_up():
     # here the details of the user are picked using the variables
     name = request.form['name']
     email = request.form['email']
-    password = request.form['password2']
+    password = request.form['password']
     # create user
     global current_user
     current_user = User(email, password, name)
@@ -40,13 +46,12 @@ def sign_up():
     else:
         return render_template('index.html', error='Email already exists')
 
-
-
+"""
 @app.route('/signIn', methods=['POST', 'GET'])
 def sign_in():
-    """
-    Signs in user to their account
-    """
+    
+    #Signs in user to their account
+    
     if request.method == 'POST':
         # Pick form values
         email = request.form['email']
@@ -66,6 +71,20 @@ def sign_in():
                                error='Invalid username or password')
     else:
         return render_template('index.html')
+        """
+
+
+
+@app.route('/signIn', methods=['GET', 'POST'])
+def sign_in():
+    if request.method == 'POST':
+        session['email'] = request.form['email']
+        session['password'] = request.form['password']
+        return redirect(url_for('sign_in'))
+    return render_template('homepage.html')
+
+
+
 
 
 

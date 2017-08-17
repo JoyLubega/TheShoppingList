@@ -13,7 +13,7 @@ class User:
         self.id = None
 
     def create_list(self, slist):
-        """
+        """RRRRRRRRR
         :param slist:
         """
         # Checkin if  the list_name_already exists
