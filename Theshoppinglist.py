@@ -9,7 +9,7 @@ from classes.shoppinglists import SList
 from classes.items import Item
 
 app = Flask(__name__)
-app.secret_key = 'MySecretKey'
+app.secret_key = 'Mykey'
 all_items = []
 current_user = None
 Shop = App()
