@@ -1,12 +1,23 @@
 
 
 from flask import Flask, render_template, request, redirect, url_for, session, flash
-from classes.app import App
+import sys
+import os
+"""
+sys.path.append(os.path.abspath('../classes'))
+#import App from classes.app import App 
 #import App from app
+import App
 
+import classes.user
+import classes.shoppinglists
+import classes.items
+"""
+from classes.app import App
 from classes.user import User
-from classes.shoppinglists import SList
 from classes.items import Item
+from classes.shoppinglists import SList
+
 
 app = Flask(__name__)
 app.secret_key = b's\x83I\xc7\xd6\xae<\xf1\x8f\\b\xff\x9e\x82::'
@@ -66,12 +77,37 @@ def sign_in():
                     if user.id == session['id']]
             current_user = user[0]
 
-            return redirect(url_for('homepage'))
-        return render_template('index.html',
+            return redirect(url_for('index'))
+        return render_template('homepage.html',
                                error='Invalid username or password')
     else:
-        return render_template('index.html')
-        """
+        return render_template('homepage.html')
+"""        
+
+
+"""
+@app.route('/signIn', methods=['GET', 'POST'])
+def signIn():
+    error = None
+    if request.method == 'POST':
+        if request.form['email'] != app.config['EMAIL']:
+            error = 'Invalid User'
+        elif request.form['password'] != app.config['PASSWORD']:
+            error = 'Invalid password'
+        else:
+            session[id] = True
+            flash('You were logged in')
+            return redirect(url_for('homepage'))
+    return render_template('index.html', error=error)
+"""
+
+
+
+
+
+
+
+
 
 
 
@@ -80,8 +116,9 @@ def sign_in():
     if request.method == 'POST':
         session['email'] = request.form['email']
         session['password'] = request.form['password']
-        return redirect(url_for('sign_in'))
-    return render_template('homepage.html')
+        return redirect(url_for('homepage'))
+    else:
+        return render_template('index.html')
 
 
 
@@ -97,17 +134,16 @@ def sign_out():
     return redirect(url_for('sign_in'))
 
 
-@app.route('/homepage')
+@app.route('/homepage', methods=['POST'])
 def homepage():
     """
     Returns lists
     """
 
-    if 'id' not in session:
-        return redirect(url_for('sign_in'))
-    global current_user # if the user exists then go the homepage
-    return render_template('homepage.html',
-                           lst=current_user.get_lists())
+    #if 'id' not in session:
+     #   return redirect(url_for('sign_in'))
+    #global current_user # if the user exists then go the homepage
+    return render_template('homepage.html')
 
 
 

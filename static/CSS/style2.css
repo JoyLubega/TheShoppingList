@@ -8,7 +8,9 @@ box-sizing: border-box;
 body {
 font-family: Arial;
 background-color: #3498DB;
-background-image: url(../img/imagess.jpg);
+background-image: url(../img/kai-oberhauser-224745.jpg);
+background-size: 1400px 660px;
+background-repeat: no-repeat;
 padding: 50px;
 }
 .login {

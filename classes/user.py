@@ -1,5 +1,5 @@
 class User:
-    def __init__(self, email, password, name=None) -> None:
+    def __init__(self, email, password, name=None):
         """
         Initiates class User
         :param email:
@@ -25,7 +25,7 @@ class User:
 
 
     def update_list(self, list_name, new_list_name,
-                    ) -> None:
+                    ):
         """
         :param list_name:
         :param new_list_name:
@@ -50,7 +50,7 @@ class User:
         lst = self.get_list_from_name(list_name)
         return lst[0]
 
-    def delete_list(self, list_name) -> None:
+    def delete_list(self, list_name):
         """
         Deletes a user's lists
         :param list_name:

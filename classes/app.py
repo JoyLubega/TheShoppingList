@@ -1,9 +1,9 @@
 class App:
-    def __init__(self) -> None:
+    def __init__(self):
         super().__init__()
         self.all_users = []
 
-    def sign_up(self, user) -> int:
+    def sign_up(self, user):
         """
         this function  registers a user
         :param user:
@@ -26,6 +26,8 @@ class App:
         signs in a user to the app
         :param user:
         """
+        if user.email=="" or user.password=="":
+            return False
 
         for existing_user in self.all_users:
             if existing_user.email == user.email and existing_user.password == user.password:
@@ -33,7 +35,7 @@ class App:
         return False
 
 
-    def sign_out(self) -> None:
+    def sign_out(self):
         """Signs out a user"""
         self.name = None
         self.email = None

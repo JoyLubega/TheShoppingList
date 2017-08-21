@@ -39,6 +39,7 @@
 }
 .nav{
 	width:400px;
+	padding: 100px;
 	
 }
 #content {
@@ -69,12 +70,14 @@
 	top: 200px;
 	text-align: center;
 	background-color: #DFDFDF;
+	margin-left:100px;
 }
 </style>
 </head>
 
 <body>
 <div class="wrapper" id="wrapper">
+
   
 
   <div class="head" id="head">
@@ -83,9 +86,10 @@
   <div class="nav" id="nav">
    
   <P>Manipulate your shopping List from here</P>
+  <form name="fm-name" method="POST" action="apDiv3">
     <table width="48%" border="0">
       <tr>
-        <td width="15%"><input type="submit" name="addbtn" id="addbtn" value="ADD LIST" /></td>
+        <td width="15%"><input type="submit" name="addbtn" id="addbtn" value="ADD LIST" action="/createList'" /></td>
         <td width="15%"><input type="submit" name="updatebtn" id="updatebtn" value="UPDATE LIST" /></td>
         <td width="12%"><input type="submit" name="viewbtn" id="viewbtn" value="VIEW LISTS" /></td>
         <td width="58%"><input type="submit" name="delbtn" id="delbtn" value="DELETE LISTS" /></td>
@@ -102,17 +106,202 @@
         <td width="58"><input type="submit" name="delitem" id="delitem" value="DELETE ITEMS" /></td>
       </tr>
     </table>
+  </form>
   </div>
   
   <!-- Footer -->
 					<footer id="footer">
 						<p class="copyright">&copy; Shopping List.</p>
 					  <p class="copyright">&nbsp;</p>
-						
-</footer
->
+                    </footer>
+
 <div id="apDiv2">Shop at ease and in your own time</div>
-<div id="apDiv3">No shoppinglists available</div>
+<div id="apDiv3">
+  {% if addbtn %}
+  <form name="addlist-form" method="get">
+   <table>
+     <tr><p>Add a Shopping List</p></tr>
+     <tr>
+       <td>List Name:</td>
+       <td><input type="text" name="addlistname" id="addlistname"/></td>
+     </tr>
+     <tr>
+       <td>Description:</td>
+       <td><input type="text" name="listdes" id="listdes"/></td>
+     </tr>
+
+
+
+     <tr>
+       <td>  </td>
+
+       <td><input type="button" name="addlistbtn" id="addlistbtn" value="Add list"></td>
+     </tr>
+
+
+
+   </table>
+
+
+  </form>
+  {% elif updatebtn %}
+
+  <form name="updatelist-form" method="get">
+   <table>
+     <tr><p>Update a Shopping List</p></tr>
+     <tr>
+       <td>List Name:</td>
+       <td><input type="text" name="addlistname" id="updatelistname"/></td>
+     </tr>
+
+     <tr>
+       <td> New List Name:</td>
+       <td><input type="text" name="newlistname" id="newlistname"/></td>
+     </tr>
+     <tr>
+       <td>Reason for update:</td>
+       <td><input type="text" name="resdes" id="resdes"/></td>
+     </tr>
+
+
+
+     <tr>
+       <td>  </td>
+
+       <td><input type="button" name="addlistbtn" id="updatelistbtn" value="Add list"></td>
+     </tr>
+
+
+
+   </table>
+
+
+  </form>
+  {% elif viewbtn %}
+
+
+  {% elif delbtn %}
+  <form name="dellist-form" method="get">
+   <table>
+     <tr><p>Delete a Shopping List</p></tr>
+     <tr>
+       <td>List Name:</td>
+       <td><input type="text" name="listname" id="dellistname"/></td>
+     </tr>
+
+
+     <tr>
+       <td>  </td>
+
+       <td><input type="button" name="dellistbtn" id="dellistbtn" value="Delete list"></td>
+     </tr>
+
+
+
+   </table>
+
+
+  </form>
+  {% elif additem %}
+  <form name="additem-form" method="get">
+   <table>
+     <tr><p>Add an item to a shopping List</p></tr>
+     <tr>
+       <td> Shopping List Name:</td>
+       <td><input type="text" name="addlistname" id="lname"/></td>
+     </tr>
+     <tr>
+       <td>Item Name:</td>
+       <td><input type="text" name="itemname" id="itemname"/></td>
+     </tr>
+
+
+
+     <tr>
+       <td>  </td>
+
+       <td><input type="button" name="additembtn" id="additembtn" value="Add Item"></td>
+     </tr>
+
+
+
+   </table>
+
+
+  </form>
+
+  {% elif updateitem %}
+  <form action="" id="updateitemform" name="updateitemform" method="get">
+  <table>
+     <tr><p>Update an item in a Shopping List</p></tr>
+     <tr>
+       <td>List Name:</td>
+       <td><input type="text" name="addlistname" id="updateitemname"/></td>
+     </tr>
+
+     <tr>
+       <td> Item Name:</td>
+       <td><input type="text" name="itname" id="itname"/></td>
+     </tr>
+     <tr>
+       <td>New Item Name:</td>
+       <td><input type="text" name="newitemname" id="newitemname"/></td>
+     </tr>
+
+
+
+     <tr>
+       <td>  </td>
+
+       <td><input type="button" name="addlistbtn" id="updateitembtn" value="Update Item"></td>
+     </tr>
+
+
+
+   </table>
+    </form>
+
+  {% elif viewitem%}
+
+
+  {% elif deleteitem  %}
+  <form name="delitem-form" id="delitem-form" method="get">
+   <table>
+     <tr><p>Delete an item from  a Shopping List</p></tr>
+     <tr>
+       <td>List Name:</td>
+       <td><input type="text" name="listname" id="delitname"/></td>
+     </tr>
+     <tr>
+       <td>Item Name:</td>
+       <td><input type="text" name="listname" id="delaitem"/></td>
+     </tr>
+
+
+     <tr>
+       <td>  </td>
+
+       <td><input type="button" name="dellistbtn" id="delitemtbtn" value="Delete Item"></td>
+     </tr>
+
+
+
+   </table>
+s
+
+  </form>
+
+  {% else %}
+  <p>No lists added yet</p>
+
+  {% endif %}
+
+  
+
+
+
+
+  </div>
 </div>
 
 
