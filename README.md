@@ -1,4 +1,10 @@
 
+[Joyce Namuli](https://img.shields.io/badge/Patrick%20Luboobi-BucketList-green.svg)
+[![Build Status](https://travis-ci.org/JoyLubega/TheShoppingList.svg?branch=master)](https://travis-ci.org/JoyLubega/TheShoppingList)
+[![Coverage Status](https://coveralls.io/repos/github/JoyLubega/TheShoppingList/badge.svg)](https://coveralls.io/github/JoyLubega/TheShoppingList)
+[![Code Climate](https://codeclimate.com/github/JoyLubega/TheShoppingList/badges/gpa.svg)](https://codeclimate.com/github/JoyLubega/TheShoppingList)
+[![PEP8](https://img.shields.io/badge/code%20style-pep8-orange.svg)](https://www.python.org/dev/peps/pep-0008/)
+
 # The Shopping List
 
 
@@ -30,7 +36,7 @@ individuals that requires an innovative and robust solution that will
 
 ### Requirements
 
-`Python 3+, python-pip, pylint virtualenv`
+`Python 3+, pip , pylint virtualenv`
 
 ### Installation
 
@@ -45,7 +51,7 @@ $ cd TheShoppingList
 
 ```
 $ virtualenv venv
-$ venv/Scripts/activate
+$ . venv/Scripts/activate
 ```
 
 ### After, install all necessary to run:
@@ -57,7 +63,7 @@ $ pip install -r requirements.txt
 ### Then, run the application:
 
 ```
-$ python Shoppinglist.py
+$ python Theshoppinglist.py
 ```
 
 ### To see your application, access this url in your browser:
