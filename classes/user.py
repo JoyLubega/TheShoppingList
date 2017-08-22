@@ -9,18 +9,19 @@ class User:
         self.email = email
         self.password = password
         self.name = name
-        self.mylists = []
+
+        self.slist = []
         self.id = None
 
-    def create_list(self, slist):
+    def create_list(self, list_name):
         """
         :param slist:
         """
         # Checkin if  the list_name_already exists
-        if [existing_list for existing_list in self.mylists
-            if existing_list.name == slist.name]:
+        if [existing_list for existing_list in self.slist
+            if existing_list.name == list_name.name]:
             return False
-        self.mylists.append(slist)
+        self.slist.append(list_name)
         return True
 
 
@@ -35,12 +36,12 @@ class User:
         if lst:
             lst[0].name = new_list_name
 
-    def get_mylists(self):
+    def get_lists(self):
         """
         view all
         Returns list of all user's lists
         """
-        return self.mylists
+        return self.slist
 
     def get_single_list(self, list_name):
         """
@@ -56,7 +57,7 @@ class User:
         :param list_name:
         """
         lst = self.get_list_from_name(list_name)
-        self.mylists.remove(lst[0])
+        self.slist.remove(lst[0])
 
     def add_item(self, list_name, item, price):
         """
@@ -66,7 +67,7 @@ class User:
         :param price:
         """
         lst = self.get_list_from_name(list_name)
-        item_price = self.price
+        price = self.price
         lst[0].items.append(item)
 
     def edit_item(self, list_name, item_name, new_item_name,price,new_price,status):
@@ -106,7 +107,7 @@ class User:
         gets  a list object using a  list name only
         :param list_name:
         """
-        return [lst for lst in self.mylists
+        return [lst for lst in self.slist
                 if lst.name == list_name]
 
     def delete_item(self, list_name, item_name):

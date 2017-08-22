@@ -30,13 +30,13 @@ Shop = App()
 @app.route('/', methods=['GET'])
 def index():
     """This show the first page which is the index page"""
-    return render_template('signup.html')
+    return render_template('index.html')
 
 
 @app.route('/sn', methods=['POST'])
 def sn():
     """This show the first page which is the index page"""
-    return render_template('index.html')
+    return render_template('signup.html')
 
 @app.route('/signUp', methods=['POST'])
 def sign_up():

@@ -5,7 +5,7 @@ import os
 
 sys.path.append(os.path.abspath('../classes'))
 #from calculator import simpleCalc
-from shoppinglists import SList
+from classes.shoppinglists import SList
 
 class ListsTestCase(unittest.TestCase):
     def setUp(self):
