@@ -2,4 +2,5 @@
 .idea/
 _pycache_/
 venv
-rar
+.rar
+.pyc
