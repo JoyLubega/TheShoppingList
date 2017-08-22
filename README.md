@@ -1,5 +1,5 @@
 
-[Joyce Namuli](https://img.shields.io/badge/Patrick%20Luboobi-BucketList-green.svg)
+[Joyce Namuli](https://img.shields.io/badge/Joyce%20Namuli-TheShoppingList-green.svg)
 [![Build Status](https://travis-ci.org/JoyLubega/TheShoppingList.svg?branch=master)](https://travis-ci.org/JoyLubega/TheShoppingList)
 [![Coverage Status](https://coveralls.io/repos/github/JoyLubega/TheShoppingList/badge.svg)](https://coveralls.io/github/JoyLubega/TheShoppingList)
 [![Code Climate](https://codeclimate.com/github/JoyLubega/TheShoppingList/badges/gpa.svg)](https://codeclimate.com/github/JoyLubega/TheShoppingList)
