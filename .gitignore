@@ -1,6 +1,7 @@
-# Created by .ignore support plugin (hsz.mobi)
+
 .idea/
-_pycache_/
-venv
-.rar
-.pyc
+__pycache__/
+venv/
+*.rar
+*.pyc
+*.cache
