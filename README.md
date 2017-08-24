@@ -1,4 +1,4 @@
-
+[![Build Status](https://travis-ci.org/JoyLubega/TheShoppingList.svg?branch=master)](https://travis-ci.org/JoyLubega/TheShoppingList)
 [Joyce Namuli](https://img.shields.io/badge/Joyce%20Namuli-TheShoppingList-green.svg)
 [![Build Status](https://travis-ci.org/JoyLubega/TheShoppingList.svg?branch=master)](https://travis-ci.org/JoyLubega/TheShoppingList)
 [![Coverage Status](https://coveralls.io/repos/github/JoyLubega/TheShoppingList/badge.svg)](https://coveralls.io/github/JoyLubega/TheShoppingList)
