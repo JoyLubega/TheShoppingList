@@ -1,16 +1,7 @@
 # from flask import Flask, render_template, request, redirect, url_for, session, flash
 # import sys
 # import os
-"""
-sys.path.append(os.path.abspath('../classes'))
-#import App from classes.app import App 
-#import App from app
-import App
 
-import classes.user
-import classes.shoppinglists
-import classes.items
-"""
 from app.classes.auth import App
 from app.classes.user import User
 from app.classes.items import Item
@@ -56,58 +47,8 @@ def sign_up():
     else:
         return render_template('index.html', error='Email already exists')
 
-"""
-@app.route('/signIn', methods=['POST', 'GET'])
-def sign_in():
-    
-    #Signs in user to their account
-    
-    if request.method == 'POST':
-        # Pick form values
-        email = request.form['email']
-        password = request.form['password']
-        user = User(email, password)
-        # start session
-        session['id'] = Shop.sign_in(user)
 
-        if session['id']:
-            global current_user
-            user = [user for user in Shop.all_users
-                    if user.id == session['id']]
-            current_user = user[0]
-
-            return redirect(url_for('index'))
-        return render_template('homepage.html',
-                               error='Invalid username or password')
-    else:
-        return render_template('homepage.html')
-"""        
-
-
-"""
-@app.route('/signIn', methods=['GET', 'POST'])
-def signIn():
-    error = None
-    if request.method == 'POST':
-        if request.form['email'] != app.config['EMAIL']:
-            error = 'Invalid User'
-        elif request.form['password'] != app.config['PASSWORD']:
-            error = 'Invalid password'
-        else:
-            session[id] = True
-            flash('You were logged in')
-            return redirect(url_for('homepage'))
-    return render_template('index.html', error=error)
-"""
-
-
-
-
-
-
-
-
-
+     
 
 
 @app.route('/signIn', methods=['GET', 'POST'])
@@ -273,3 +214,9 @@ def del_item(item_name, list_name):
     current_user.delete_item(list_name, item_name)
     return redirect(url_for('single_list',
                             list_name=list_name))
+
+
+
+# @app.errorhandler(404):
+# def page_not_found(e):
+#     return render_template("404-page.html"),404

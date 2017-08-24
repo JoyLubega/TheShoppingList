@@ -70,7 +70,7 @@
 				<!-- Main -->
 					<div id="main">
 						<!-- Add List -->
-						<form>
+						<form  action="/createList" method="POST">
 						<article id="addlist">
 								<h2 class="major">Add a shopping List</h2>
 								<div class="table-addlist"> 
@@ -99,7 +99,7 @@
 						</article>
 						</form>
 						<!-- Update List -->
-						<form>
+						<form method="POST" action="/edit_list/<list_name>">
 						<article id="updatelist">
 								<h2 class="major">Update a shopping List</h2>
 								<div class="table-updatelist"> 
@@ -129,7 +129,7 @@
 						</form>
 
 						<!-- Delete List -->
-						<form>
+						<form method="POST" action="/del_list/<string:delist_name>">
 						<article id="deletelist">
 								<h2 class="major">Delete a shopping List</h2>
 								<div class="table-deletelist"> 
@@ -156,7 +156,7 @@
 
 
 						<!-- View List -->
-						<form>
+						<form action="/homepage/<string:list_name>" method="POST">
 						<article id="vlist">
 								<h2 class="major">View shopping Lists</h2>
 								<div class="table-viewlist"> 
@@ -179,7 +179,7 @@
 
 
 						<!-- Add item-->
-						<form>
+						<form action="/create_item/<string:list_name>">
 						<article id="additem">
 								<h2 class="major">Add an Item to a  shopping List</h2>
 								<div class="table-additem"> 
@@ -214,7 +214,8 @@
 						</article>
 						</form>
 						<!-- Update item -->
-						<form>
+						<form action="/edit_item/<string:list_name>/'
+							'<item_name>'" method="POST">
 						<article id="updateitem">
 								<h2 class="major">Update an itemin a shopping List</h2>
 								<div class="table-updatelist"> 
@@ -252,7 +253,8 @@
 						</form>
 
 						<!-- Delete Item -->
-						<form>
+						<form action="/del_item/<string:list_name>/'
+							'<string:item_name>" method="POST">
 						<article id="deleteitem">
 								<h2 class="major">Delete a shopping List</h2>
 								<div class="table-deletelist"> 
@@ -286,7 +288,7 @@
 
 
 						<!-- View Items -->
-						<form>
+						<form action="" >
 						<article id="vitem">
 								<h2 class="major">View Items in a  shopping List</h2>
 								<div class="table-viewitem"> 
