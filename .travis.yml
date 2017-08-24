@@ -8,9 +8,10 @@ install:
   - "pip install unittest2"  
   - "pip install coveralls"
   - "pip install coverage"
+  - "pip install nosetests"
 # command to run tests
 script:
-  -python -.py
+  -python -run.py
   - nosetests --with-coverage
 
 after_success:
