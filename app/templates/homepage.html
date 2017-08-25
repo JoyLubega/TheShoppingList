@@ -9,6 +9,25 @@
 		
 		<!--[if lte IE 9]><link rel="stylesheet" href="assets/css/ie9.css" /><![endif]-->
 		<noscript><link rel="stylesheet" href="../static/CSS/noscript.css" /></noscript>
+
+		<style>
+
+			.view-div{
+
+				width: 300px;
+				height: 300px;
+				background-color: gainsboro;
+				
+			}
+
+			.view-div2{
+
+				width: 200px;
+				height: 300px;
+				background-color: gainsboro;
+			}
+
+		</style>
 	</head>
 	<body>
 		
@@ -17,28 +36,283 @@
 
 				<!-- Header -->
 					<header id="header">
-						<div class="logo">
-                        <img class="icon fa-diamond" src="../static/img/shopping-cart-hi.png" width="65" height="68" alt="shopping"> </div>
+						
 						<div class="content">
 							<div class="inner">
 								<h1>SHOPPING lIST</h1>
-								<p>The challenge of keeping track of shopping items is a need for many individuals that requires an innovative and robust solution that will allow them to remember and share the shopping lists with others</p>
+								
 							</div>
 						</div>
 						<nav>
 							<ul>
 								<li><a href="#">Home</a></li>
-								<li><a href="#">View Lists</a></li>
-								<li><a href="#">Delete Lists</a></li>
-								<li><a href="#">Add Lists</a></li>
-                                <li><a href="#">Update Lists</a></li>
+								<li><a href="#vlist">View Lists</a></li>
+								<li><a href="#deletelist">Delete Lists</a></li>
+								<li><a href="#addlist">Add Lists</a></li>
+                                <li><a href="#updatelist">Update Lists</a></li>
 								<!--<li><a href="#elements">Elements</a></li>-->
 							</ul>
 						</nav>
+						
+						<nav>
+								<ul>
+									
+									<li><a href="#additem">add item</a></li>
+									<li><a href="#vitem">View item</a></li>
+									<li><a href="#deleteitem">Delete item</a></li>
+									
+									<li><a href="#updateitem">Update Item</a></li>
+									<!--<li><a href="#elements">Elements</a></li>-->
+								</ul>
+							</nav>
 					</header>
 
 				<!-- Main -->
 					<div id="main">
+						<!-- Add List -->
+						
+						<article id="addlist">
+							<form action="/homepage" method="POST">
+								<h2 class="major">Add a shopping List</h2>
+								<div class="table-addlist"> 
+									<table>
+										<tr>
+											<td>List name:</td>
+											<td><input type="text" name="addlist" id="addlist" required/></td>
+
+										</tr>
+										<tr>
+												<td>Description:</td>
+												<td><input type="text" name="addlistarea" id="addlistarea" /></td>
+	
+											</tr>
+										<tr>
+												<td></td>
+												<td><input type="submit" value="ADD" name="addlistbtn" id="addlistbtn"/></td>
+	
+											</tr>
+
+
+									</table>
+
+								</div>
+							</form>
+								
+						</article>
+					
+						<!-- Update List -->
+						<article id="updatelist">
+							<form action="/homepage" method="POST">
+								<h2 class="major">Update a shopping List</h2>
+								<div class="table-updatelist"> 
+									<table>
+										<tr>
+											<td>List name:</td>
+											<td><input type="text" name="addlist" id="addlist"/></td>
+
+										</tr>
+										<tr>
+												<td>New List Name:</td>
+												<td><input type="text" name="addlistarea" id="addlistarea"/></td>
+	
+											</tr>
+										<tr>
+												<td></td>
+												<td><input type="submit"  value="UPDATE" name="addlistbtn" id="addlistbtn"/></td>
+	
+											</tr>
+
+
+									</table>
+
+								</div>
+							</form>	
+						</article>
+
+						<!-- Delete List -->
+						<article id="deletelist">
+							<form action="/homepage" method="POST">
+								<h2 class="major">Delete a shopping List</h2>
+								<div class="table-deletelist"> 
+									<table>
+										<tr>
+											<td>List name:</td>
+											<td><input type="text" name="deletelist" id="dellist"/></td>
+
+										</tr>
+										
+										<tr>
+												<td></td>
+												<td><input type="submit"  value="DELETE" name="deletelistbtn" id="deletelistbtn"/></td>
+	
+											</tr>
+
+
+									</table>
+
+								</div>
+							</form>	
+						</article>
+
+
+						<!-- View List -->
+					<form action="/homepage" method="POST">
+						<article id="vlist">
+								<h2 class="major">View shopping Lists</h2>
+								<div class="table-viewlist"> 
+									<table>
+										<tr>
+												<input type="submit"  value="view" onclick="changeText2" name="deletelistbtn" id="deletelistbtn"/>
+											<div class="view-div">
+												<ol>
+													<li >demo </li> 
+												</ol>
+											</div>
+
+										</tr>
+										
+												
+
+
+									</table>
+
+								</div>
+								
+						</article>
+					</form>
+
+
+						<!-- Add item-->
+						<article id="additem">
+							<form action="/homepage" method="POST">
+								<h2 class="major">Add an Item to a  shopping List</h2>
+								<div class="table-additem"> 
+									<table>
+										<tr>
+											<td>List name:</td>
+											<td><input type="text" name="list_name" id="list_name" required/></td>
+
+										</tr>
+										<tr>
+												<td>Item Name:</td>
+												<td><input type="text" name="additem" id="addit" required/></td>
+	
+										</tr>
+
+										<tr>
+												<td>Price:</td>
+												<td><input type="text" name="addprice" id="addprice"/></td>
+	
+										</tr>
+										<tr>
+												<td></td>
+												<td><input type="submit" value="ADD" name="additembtn" id="additembtn"/></td>
+	
+											</tr>
+
+
+									</table>
+									
+								</div>
+							</form>
+						</article>
+						<!-- Update item -->
+						<article id="updateitem">
+							<form action="/homepage" method="POST">
+								<h2 class="major">Update an item in a shopping List</h2>
+								<div class="table-updatelist"> 
+									<table>
+										<tr>
+											<td>List name:</td>
+											<td><input type="text" name="list_name" id="list_name" required/></td>
+
+										</tr>
+										<tr>
+												<td>Item Name:</td>
+												<td><input type="text" name="updateitem" id="updateitem" required/></td>
+	
+										</tr>
+
+
+
+										<tr>
+												<td>New Item Name:</td>
+												<td><input type="text" name="addlistarea" id="addlistarea" required/></td>
+	
+										</tr>
+										<tr>
+												<td></td>
+												<td><input type="submit"  value="UPDATE" name="updateitembtn" id="updateitembtn" /></td>
+	
+											</tr>
+
+
+									</table>
+
+								</div>
+							</form>	
+						</article>
+
+						<!-- Delete Item -->
+						<article id="deleteitem">
+							<form action="/homepage" method="POST">
+								<h2 class="major">Delete a shopping List</h2>
+								<div class="table-deletelist"> 
+									<table>
+										<tr>
+											<td>List name:</td>
+											<td><input type="text" name="list_name" id="list_name" required/></td>
+		
+										</tr>
+
+
+										<tr>
+											<td>Item name:</td>
+											<td><input type="text" name="deleteitem" id="delitem" required/></td>
+
+										</tr>
+										
+										<tr>
+												<td></td>
+												<td><input type="submit"  value="DELETE" name="deleteitembtn" id="deleteitembtn" /></td>
+	
+											</tr>
+
+
+									</table>
+
+								</div>
+							</form>	
+						</article>
+
+
+						<!-- View Items -->
+						<article id="vitem">
+							<form method="POST" action="/homepage">
+								<h2 class="major">View Items in a  shopping List</h2>
+								<div class="table-viewitem"> 
+									<table>
+										<tr>
+											<div class="view-div2"></div>
+
+										</tr>
+										
+												
+
+
+									</table>
+
+								</div>
+							</form>	
+						</article>
+
+						
+
+						
+
+
+
+
 
 						
 
@@ -50,6 +324,20 @@
 					</footer>
 
 	</div>
+
+
+<script>
+	var list = document.getElementById('demo');
+	
+	function changeText2() {
+		var firstname = document.getElementById('addlist').value;
+		document.getElementById('view-div').innerHTML = firstname;
+		var entry = document.createElement('li');
+		entry.appendChild(document.createTextNode(firstname));
+		list.appendChild(entry);
+	}
+	 </script>
+	
 
 		<!-- BG -->
 			<div id="bg"></div>

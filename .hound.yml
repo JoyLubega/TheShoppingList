@@ -1,0 +1,11 @@
+python:
+  enabled: true
+
+tslint:
+  enabled: true
+
+sass-lint:
+  enabled: true
+
+elixir:
+  enabled: true
