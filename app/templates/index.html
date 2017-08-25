@@ -10,7 +10,7 @@
 
 
 
-<form action="/homepage" method="POST">
+<form action="/homepage" method="POST" name="log_in">
 	<div class="login">
 		<div class="login-screen">
 			<div class="app-title">
@@ -20,16 +20,16 @@
 
 			<div class="login-form">
 				<div class="control-group">
-				<input type="email" class="login-field" value="" placeholder="email" name="email">
+				<input type="email" class="login-field" value="" placeholder="email" name="email" required>
 				<label class="login-field-icon fui-user" for="login-name"></label>
 				</div>
 
 				<div class="control-group">
-				<input type="password" class="login-field" value="" placeholder="password" name="password">
+				<input type="password" class="login-field" value="" placeholder="password" name="password" required>
 				<label class="login-field-icon fui-lock" for="login-pass"></label>
 				</div>
 
-                <input type="submit" value="Login" class="btn btn-primary btn-large btn-block" >
+                <input type="submit" value="Login"  class="btn btn-primary btn-large btn-block" >
 			    <br>
 				<p>&nbsp;</p>
 			</div>
@@ -37,10 +37,13 @@
 	</div>
 </form>
 
-<form action="/sn" method="POST">
+<!-- <form action="/sn" method="POST">
 		<input type="submit" value="LOGIN" class="btn btn-primary btn-large btn-block" >
 		<br>
-</form>
+</form> -->
+
+
+
 
 <script type="text/javascript" src="list.js"></script>
 </body>

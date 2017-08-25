@@ -70,19 +70,20 @@
 				<!-- Main -->
 					<div id="main">
 						<!-- Add List -->
-						<form  action="/createList" method="POST">
+						
 						<article id="addlist">
+							<form action="/homepage" method="POST">
 								<h2 class="major">Add a shopping List</h2>
 								<div class="table-addlist"> 
 									<table>
 										<tr>
 											<td>List name:</td>
-											<td><input type="text" name="addlist" id="addlist"/></td>
+											<td><input type="text" name="addlist" id="addlist" required/></td>
 
 										</tr>
 										<tr>
 												<td>Description:</td>
-												<td><input type="text" name="addlistarea" id="addlistarea"/></td>
+												<td><input type="text" name="addlistarea" id="addlistarea" /></td>
 	
 											</tr>
 										<tr>
@@ -95,12 +96,13 @@
 									</table>
 
 								</div>
+							</form>
 								
 						</article>
-						</form>
+					
 						<!-- Update List -->
-						<form method="POST" action="/edit_list/<list_name>">
 						<article id="updatelist">
+							<form action="/homepage" method="POST">
 								<h2 class="major">Update a shopping List</h2>
 								<div class="table-updatelist"> 
 									<table>
@@ -124,13 +126,12 @@
 									</table>
 
 								</div>
-								
+							</form>	
 						</article>
-						</form>
 
 						<!-- Delete List -->
-						<form method="POST" action="/del_list/<string:delist_name>">
 						<article id="deletelist">
+							<form action="/homepage" method="POST">
 								<h2 class="major">Delete a shopping List</h2>
 								<div class="table-deletelist"> 
 									<table>
@@ -150,19 +151,23 @@
 									</table>
 
 								</div>
-								
+							</form>	
 						</article>
-						</form>
 
 
 						<!-- View List -->
-						<form action="/homepage/<string:list_name>" method="POST">
+					<form action="/homepage" method="POST">
 						<article id="vlist">
 								<h2 class="major">View shopping Lists</h2>
 								<div class="table-viewlist"> 
 									<table>
 										<tr>
-											<div class="view-div"></div>
+												<input type="submit"  value="view" onclick="changeText2" name="deletelistbtn" id="deletelistbtn"/>
+											<div class="view-div">
+												<ol>
+													<li >demo </li> 
+												</ol>
+											</div>
 
 										</tr>
 										
@@ -174,24 +179,23 @@
 								</div>
 								
 						</article>
-						</form>
-
+					</form>
 
 
 						<!-- Add item-->
-						<form action="/create_item/<string:list_name>">
 						<article id="additem">
+							<form action="/homepage" method="POST">
 								<h2 class="major">Add an Item to a  shopping List</h2>
 								<div class="table-additem"> 
 									<table>
 										<tr>
 											<td>List name:</td>
-											<td><input type="text" name="list_name" id="list_name"/></td>
+											<td><input type="text" name="list_name" id="list_name" required/></td>
 
 										</tr>
 										<tr>
 												<td>Item Name:</td>
-												<td><input type="text" name="additem" id="addit"/></td>
+												<td><input type="text" name="additem" id="addit" required/></td>
 	
 										</tr>
 
@@ -208,26 +212,24 @@
 
 
 									</table>
-
+									
 								</div>
-								
+							</form>
 						</article>
-						</form>
 						<!-- Update item -->
-						<form action="/edit_item/<string:list_name>/'
-							'<item_name>'" method="POST">
 						<article id="updateitem">
-								<h2 class="major">Update an itemin a shopping List</h2>
+							<form action="/homepage" method="POST">
+								<h2 class="major">Update an item in a shopping List</h2>
 								<div class="table-updatelist"> 
 									<table>
 										<tr>
 											<td>List name:</td>
-											<td><input type="text" name="list_name" id="list_name"/></td>
+											<td><input type="text" name="list_name" id="list_name" required/></td>
 
 										</tr>
 										<tr>
 												<td>Item Name:</td>
-												<td><input type="text" name="updateitem" id="updateitem"/></td>
+												<td><input type="text" name="updateitem" id="updateitem" required/></td>
 	
 										</tr>
 
@@ -235,12 +237,12 @@
 
 										<tr>
 												<td>New Item Name:</td>
-												<td><input type="text" name="addlistarea" id="addlistarea"/></td>
+												<td><input type="text" name="addlistarea" id="addlistarea" required/></td>
 	
 										</tr>
 										<tr>
 												<td></td>
-												<td><input type="submit"  value="UPDATE" name="updateitembtn" id="updateitembtn"/></td>
+												<td><input type="submit"  value="UPDATE" name="updateitembtn" id="updateitembtn" /></td>
 	
 											</tr>
 
@@ -248,33 +250,31 @@
 									</table>
 
 								</div>
-								
+							</form>	
 						</article>
-						</form>
 
 						<!-- Delete Item -->
-						<form action="/del_item/<string:list_name>/'
-							'<string:item_name>" method="POST">
 						<article id="deleteitem">
+							<form action="/homepage" method="POST">
 								<h2 class="major">Delete a shopping List</h2>
 								<div class="table-deletelist"> 
 									<table>
 										<tr>
 											<td>List name:</td>
-											<td><input type="text" name="list_name" id="list_name"/></td>
+											<td><input type="text" name="list_name" id="list_name" required/></td>
 		
 										</tr>
 
 
 										<tr>
 											<td>Item name:</td>
-											<td><input type="text" name="deleteitem" id="delitem"/></td>
+											<td><input type="text" name="deleteitem" id="delitem" required/></td>
 
 										</tr>
 										
 										<tr>
 												<td></td>
-												<td><input type="submit"  value="DELETE" name="deleteitembtn" id="deleteitembtn"/></td>
+												<td><input type="submit"  value="DELETE" name="deleteitembtn" id="deleteitembtn" /></td>
 	
 											</tr>
 
@@ -282,14 +282,13 @@
 									</table>
 
 								</div>
-								
+							</form>	
 						</article>
-						</form>
 
 
 						<!-- View Items -->
-						<form action="" >
 						<article id="vitem">
+							<form method="POST" action="/homepage">
 								<h2 class="major">View Items in a  shopping List</h2>
 								<div class="table-viewitem"> 
 									<table>
@@ -304,9 +303,8 @@
 									</table>
 
 								</div>
-								
+							</form>	
 						</article>
-						</form>
 
 						
 
@@ -326,6 +324,20 @@
 					</footer>
 
 	</div>
+
+
+<script>
+	var list = document.getElementById('demo');
+	
+	function changeText2() {
+		var firstname = document.getElementById('addlist').value;
+		document.getElementById('view-div').innerHTML = firstname;
+		var entry = document.createElement('li');
+		entry.appendChild(document.createTextNode(firstname));
+		list.appendChild(entry);
+	}
+	 </script>
+	
 
 		<!-- BG -->
 			<div id="bg"></div>

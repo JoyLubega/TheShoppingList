@@ -12,7 +12,7 @@ install:
 # command to run tests
 script:
   -python run.py
-  - nosetests --with-coverage --cover-package=Tests
+  - nose --with-coverage --cover-package=Tests
 
 after_success:
   - coveralls

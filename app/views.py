@@ -1,6 +1,6 @@
-# from flask import Flask, render_template, request, redirect, url_for, session, flash
-# import sys
-# import os
+from flask import Flask, render_template, request, redirect, url_for, session, flash
+import sys
+import os
 
 from app.classes.auth import App
 from app.classes.user import User
@@ -59,7 +59,13 @@ def sign_in():
         return redirect(url_for('homepage'))
     else:
         return render_template('index.html')
-
+# @app.route('/signIn', methods=['POST'])
+# def sign_in():
+#     if request.form['password'] == 'password' and request.form['username'] == 'admin':
+#         session['logged_in'] = True
+#     else:
+#         flash('wrong password!')
+#     return render_template("index.html")
 
 
 
@@ -77,7 +83,7 @@ def sign_out():
 @app.route('/homepage', methods=['POST'])
 def homepage():
     """
-    Returns lists
+    Returns homepage
     """
 
     #if 'id' not in session:
@@ -94,8 +100,8 @@ def createList():
     """
 
     # Check user is signed in
-    if 'id' not in session:
-        return redirect(url_for('sign_in'))
+    # if 'id' not in session:
+    #     return redirect(url_for('sign_in'))
     # Pick form values
     list_name = request.form['addlist']
 
@@ -220,3 +226,8 @@ def del_item(item_name, list_name):
 # @app.errorhandler(404):
 # def page_not_found(e):
 #     return render_template("404-page.html"),404
+
+
+
+
+

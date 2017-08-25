@@ -1,10 +1,8 @@
 [![Build Status](https://travis-ci.org/JoyLubega/TheShoppingList.svg?branch=master)](https://travis-ci.org/JoyLubega/TheShoppingList)
-[Joyce Namuli](https://img.shields.io/badge/Joyce%20Namuli-TheShoppingList-green.svg)
-[![Build Status](https://travis-ci.org/JoyLubega/TheShoppingList.svg?branch=master)](https://travis-ci.org/JoyLubega/TheShoppingList)
 [![Coverage Status](https://coveralls.io/repos/github/JoyLubega/TheShoppingList/badge.svg)](https://coveralls.io/github/JoyLubega/TheShoppingList)
-[![Code Climate](https://codeclimate.com/github/JoyLubega/TheShoppingList/badges/gpa.svg)](https://codeclimate.com/github/JoyLubega/TheShoppingList)
-[![PEP8](https://img.shields.io/badge/code%20style-pep8-orange.svg)](https://www.python.org/dev/peps/pep-0008/)
 
+[![PEP8](https://img.shields.io/badge/code%20style-pep8-orange.svg)](https://www.python.org/dev/peps/pep-0008/)
+<a href="https://codeclimate.com/github/codeclimate/codeclimate"><img src="https://codeclimate.com/github/codeclimate/codeclimate/badges/gpa.svg" /></a>
 # The Shopping List
 
 
